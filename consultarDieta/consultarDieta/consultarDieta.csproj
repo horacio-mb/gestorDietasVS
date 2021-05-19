@@ -67,10 +67,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="frmCliente.aspx" />
     <Content Include="frmConsultarDieta.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCliente.aspx.cs">
+      <DependentUpon>frmCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCliente.aspx.designer.cs">
+      <DependentUpon>frmCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultarDieta.aspx.cs">
       <DependentUpon>frmConsultarDieta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
