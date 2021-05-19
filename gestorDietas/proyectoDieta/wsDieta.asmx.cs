@@ -18,7 +18,7 @@ namespace proyectoDieta
     // [System.Web.Script.Services.ScriptService]
     public class wsDieta : System.Web.Services.WebService
     {
-
+        //Dieta Metodos
         [WebMethod]
         public DataSet guardarDieta(string nombre, string fechaInicio, string fechaFinal, string idCliente,string idUsuario)
         {
@@ -58,6 +58,63 @@ namespace proyectoDieta
             clsConexion con = new clsConexion();
             string s;
             s = "select d.idDieta, d.nombre, d.fechaInicio, d.fechaFinal , concat_ws(' ',c.nombre, c.apellido_paterno) as cliente from dieta d inner join cliente c on c.idCliente=d.idCliente where concat_ws(' ',c.nombre, c.apellido_paterno) like concat('%" + buscar + "%')";
+            DataSet ds = new DataSet();
+            con.ejecutarSQL(s, "tc", ds);
+            return ds;
+        }
+
+
+        //Metodos Cliente
+        [WebMethod]
+        public DataSet buscarClientePorNombre(string nombre1)
+        {
+            clsConexion con = new clsConexion();
+            string s;
+            s = "select idCliente, nombre, apellido_paterno, apellido_materno, date_format(fecha_nacimiento, '%Y-%m-%d') as fecha, correo, telefono, sexo from cliente where cliente.nombre=('" + nombre1 + "');";
+            DataSet ds = new DataSet();
+            con.ejecutarSQL(s, "tc", ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet mostrarTodos(string nombre)
+        {
+            clsConexion con = new clsConexion();
+            string s;
+            s = "select idCliente, nombre, apellido_paterno, apellido_materno, date_format(fecha_nacimiento, '%Y-%m-%d') as fecha, correo, telefono, sexo from cliente";
+            DataSet ds = new DataSet();
+            con.ejecutarSQL(s, "tc", ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet guardarCliente(string nombre1, string paterno, string materno, string fecha, string correo, string telefono, string sexo)
+        {
+            clsConexion con = new clsConexion();
+            string s;
+            s = "insert into cliente (nombre,apellido_paterno,apellido_materno,fecha_nacimiento,correo,telefono,sexo) values ('" + nombre1 + "','" + paterno + "','" + materno + "','" + fecha + "','" + correo + "','" + telefono + "','" + sexo + "');";
+            DataSet ds = new DataSet();
+            con.ejecutarSQL(s, "tc", ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet eliminarCliente(string id)
+        {
+            clsConexion con = new clsConexion();
+            string s;
+            s = "delete from cliente where idCliente = '" + id + "'";
+            DataSet ds = new DataSet();
+            con.ejecutarSQL(s, "tc", ds);
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet modificarCliente(string id, string nombre1, string paterno, string materno, string fecha, string correo, string telefono, string sexo)
+        {
+            clsConexion con = new clsConexion();
+            string s;
+            s = "update cliente set nombre='" + nombre1 + "',apellido_paterno='" + paterno + "',apellido_materno='" + materno + "',fecha_nacimiento='" + fecha + "',correo='" + correo + "',telefono='" + telefono + "',sexo='" + sexo + "' where idCliente='" + id + "'";
             DataSet ds = new DataSet();
             con.ejecutarSQL(s, "tc", ds);
             return ds;
