@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gestorDietas", "gestorDietas\gestorDietas.csproj", "{F4487019-64A8-4F5B-ADE8-161CB293FABC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaDatos", "gestorDietas\capaDatos.csproj", "{F4487019-64A8-4F5B-ADE8-161CB293FABC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
