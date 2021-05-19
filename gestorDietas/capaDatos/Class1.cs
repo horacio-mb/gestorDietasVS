@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace gestorDietas
+namespace capaDatos
 {
-    public class clsConexion
+    public class Class1
     {
     }
 }

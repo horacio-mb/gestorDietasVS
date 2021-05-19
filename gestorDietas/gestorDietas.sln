@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaDatos", "gestorDietas\capaDatos.csproj", "{F4487019-64A8-4F5B-ADE8-161CB293FABC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaDatos", "capaDatos\capaDatos.csproj", "{F079BE8E-EBB8-4FD3-838D-25437EB5A6B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F4487019-64A8-4F5B-ADE8-161CB293FABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4487019-64A8-4F5B-ADE8-161CB293FABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4487019-64A8-4F5B-ADE8-161CB293FABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4487019-64A8-4F5B-ADE8-161CB293FABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F079BE8E-EBB8-4FD3-838D-25437EB5A6B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F079BE8E-EBB8-4FD3-838D-25437EB5A6B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F079BE8E-EBB8-4FD3-838D-25437EB5A6B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F079BE8E-EBB8-4FD3-838D-25437EB5A6B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DA9550C3-BF36-4D6B-BD00-6806194B00CA}
+		SolutionGuid = {93EAC269-D686-43D5-9EC7-32FB66F66550}
 	EndGlobalSection
 EndGlobal
