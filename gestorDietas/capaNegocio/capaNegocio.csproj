@@ -41,8 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dieta.cs" />
+    <Compile Include="DietaComida.cs" />
     <Compile Include="tipoComida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\capaDatos\capaDatos.csproj">
+      <Project>{F079BE8E-EBB8-4FD3-838D-25437EB5A6B7}</Project>
+      <Name>capaDatos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

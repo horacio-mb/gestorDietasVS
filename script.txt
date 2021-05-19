@@ -1,0 +1,60 @@
+create database bdgestordietas;
+use bdgestordietas;
+
+create table cliente(
+idCliente int AUTO_INCREMENT primary key,
+nombre varchar(30),
+apellido_paterno varchar(30),
+apellido_materno varchar(30),
+fecha_nacimiento date,
+correo varchar(30),
+telefono varchar(10),
+sexo char(1)
+);
+
+create table tipo_comida(
+idTipoComida int auto_increment primary key,
+nombre varchar(40)
+);
+
+create table comida(
+idComida int auto_increment primary key,
+descripcion varchar(150),
+idTipoComida int not null,
+foreign key(idTipoComida) references tipo_comida(idTipoComida)
+);
+
+create table usuario(
+idUsuario int auto_increment primary key,
+usuario varchar(30),
+correo varchar(30),
+contrasena varchar(150),
+nombre varchar(30),
+materno varchar(30),
+paterno varchar(30)
+);
+
+create table dieta(
+idDieta int auto_increment primary key,
+nombre varchar(40),
+fechaInicio date,
+fechaFinal date,
+idCliente int,
+idUsuario int,
+foreign key(idCliente) references cliente(idCliente),
+foreign key(idUsuario) references usuario(idUsuario));
+
+create table dieta_comida(
+idDieta int not null,
+idComida int not null,
+distribucion varchar(30),
+primary key(idDieta,idComida),
+foreign key(idDieta) references dieta(idDieta),
+foreign key(idComida) references comida(idComida)
+);
+
+
+
+
+
+
