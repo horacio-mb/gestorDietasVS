@@ -52,11 +52,12 @@ namespace proyectoDieta
             return ds;
         }
         //buscar dieta averiguar que parámetros 
+        [WebMethod]
         public DataSet buscarDietaPorCliente(string buscar)
         {
             clsConexion con = new clsConexion();
             string s;
-            s = "select d.idDieta, d.nombre, d.fechaInicio, d.fechaFinal , concat_ws(' ',c.nombre, c.apellido_paterno) as cliente from dieta d inner join cliente c on c.idCliente=d.idCliente where concat_ws(' ',c.nombre, c.apellido_paterno) like concat('%',"+ buscar + ",'%');";
+            s = "select d.idDieta, d.nombre, d.fechaInicio, d.fechaFinal , concat_ws(' ',c.nombre, c.apellido_paterno) as cliente from dieta d inner join cliente c on c.idCliente=d.idCliente where concat_ws(' ',c.nombre, c.apellido_paterno) like concat('%" + buscar + "%')";
             DataSet ds = new DataSet();
             con.ejecutarSQL(s, "tc", ds);
             return ds;
