@@ -177,6 +177,15 @@ namespace consultarDieta
         protected global::System.Web.UI.WebControls.Label lblCliente;
 
         /// <summary>
+        /// Control miModalC.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender miModalC;
+
+        /// <summary>
         /// Control txtBuscarC.
         /// </summary>
         /// <remarks>
@@ -220,6 +229,15 @@ namespace consultarDieta
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblProducto;
+
+        /// <summary>
+        /// Control miModalCo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender miModalCo;
 
         /// <summary>
         /// Control txtBuscarCom.
@@ -274,6 +292,15 @@ namespace consultarDieta
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDieta;
+
+        /// <summary>
+        /// Control miModalD.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender miModalD;
 
         /// <summary>
         /// Control txtBuscarD.
