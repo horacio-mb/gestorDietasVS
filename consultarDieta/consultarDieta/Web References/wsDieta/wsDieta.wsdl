@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="guardarDieta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaFinal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="guardarDietaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guardarDietaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modificarDieta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idDieta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaFinal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modificarDietaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modificarDietaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarDieta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idDieta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarDietaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarDietaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarDietaPorCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscar" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarDietaPorClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarDietaPorClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarClientePorNombre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre1" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarClientePorNombreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarClientePorNombreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mostrarTodos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mostrarTodosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mostrarTodosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="guardarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sexo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="guardarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guardarClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modificarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sexo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modificarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modificarClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="guardarDietaSoapIn">
+    <wsdl:part name="parameters" element="tns:guardarDieta" />
+  </wsdl:message>
+  <wsdl:message name="guardarDietaSoapOut">
+    <wsdl:part name="parameters" element="tns:guardarDietaResponse" />
+  </wsdl:message>
+  <wsdl:message name="modificarDietaSoapIn">
+    <wsdl:part name="parameters" element="tns:modificarDieta" />
+  </wsdl:message>
+  <wsdl:message name="modificarDietaSoapOut">
+    <wsdl:part name="parameters" element="tns:modificarDietaResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDietaSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarDieta" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDietaSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarDietaResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarDietaPorClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarDietaPorCliente" />
+  </wsdl:message>
+  <wsdl:message name="buscarDietaPorClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarDietaPorClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarClientePorNombreSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarClientePorNombre" />
+  </wsdl:message>
+  <wsdl:message name="buscarClientePorNombreSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarClientePorNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="mostrarTodosSoapIn">
+    <wsdl:part name="parameters" element="tns:mostrarTodos" />
+  </wsdl:message>
+  <wsdl:message name="mostrarTodosSoapOut">
+    <wsdl:part name="parameters" element="tns:mostrarTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="guardarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:guardarCliente" />
+  </wsdl:message>
+  <wsdl:message name="guardarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:guardarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarCliente" />
+  </wsdl:message>
+  <wsdl:message name="eliminarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="modificarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:modificarCliente" />
+  </wsdl:message>
+  <wsdl:message name="modificarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:modificarClienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsDietaSoap">
+    <wsdl:operation name="guardarDieta">
+      <wsdl:input message="tns:guardarDietaSoapIn" />
+      <wsdl:output message="tns:guardarDietaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modificarDieta">
+      <wsdl:input message="tns:modificarDietaSoapIn" />
+      <wsdl:output message="tns:modificarDietaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDieta">
+      <wsdl:input message="tns:eliminarDietaSoapIn" />
+      <wsdl:output message="tns:eliminarDietaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarDietaPorCliente">
+      <wsdl:input message="tns:buscarDietaPorClienteSoapIn" />
+      <wsdl:output message="tns:buscarDietaPorClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarClientePorNombre">
+      <wsdl:input message="tns:buscarClientePorNombreSoapIn" />
+      <wsdl:output message="tns:buscarClientePorNombreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mostrarTodos">
+      <wsdl:input message="tns:mostrarTodosSoapIn" />
+      <wsdl:output message="tns:mostrarTodosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="guardarCliente">
+      <wsdl:input message="tns:guardarClienteSoapIn" />
+      <wsdl:output message="tns:guardarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCliente">
+      <wsdl:input message="tns:eliminarClienteSoapIn" />
+      <wsdl:output message="tns:eliminarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modificarCliente">
+      <wsdl:input message="tns:modificarClienteSoapIn" />
+      <wsdl:output message="tns:modificarClienteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsDietaSoap" type="tns:wsDietaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="guardarDieta">
+      <soap:operation soapAction="http://tempuri.org/guardarDieta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarDieta">
+      <soap:operation soapAction="http://tempuri.org/modificarDieta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDieta">
+      <soap:operation soapAction="http://tempuri.org/eliminarDieta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarDietaPorCliente">
+      <soap:operation soapAction="http://tempuri.org/buscarDietaPorCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarClientePorNombre">
+      <soap:operation soapAction="http://tempuri.org/buscarClientePorNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mostrarTodos">
+      <soap:operation soapAction="http://tempuri.org/mostrarTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="guardarCliente">
+      <soap:operation soapAction="http://tempuri.org/guardarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCliente">
+      <soap:operation soapAction="http://tempuri.org/eliminarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarCliente">
+      <soap:operation soapAction="http://tempuri.org/modificarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsDietaSoap12" type="tns:wsDietaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="guardarDieta">
+      <soap12:operation soapAction="http://tempuri.org/guardarDieta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarDieta">
+      <soap12:operation soapAction="http://tempuri.org/modificarDieta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDieta">
+      <soap12:operation soapAction="http://tempuri.org/eliminarDieta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarDietaPorCliente">
+      <soap12:operation soapAction="http://tempuri.org/buscarDietaPorCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarClientePorNombre">
+      <soap12:operation soapAction="http://tempuri.org/buscarClientePorNombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mostrarTodos">
+      <soap12:operation soapAction="http://tempuri.org/mostrarTodos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="guardarCliente">
+      <soap12:operation soapAction="http://tempuri.org/guardarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCliente">
+      <soap12:operation soapAction="http://tempuri.org/eliminarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarCliente">
+      <soap12:operation soapAction="http://tempuri.org/modificarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsDieta">
+    <wsdl:port name="wsDietaSoap" binding="tns:wsDietaSoap">
+      <soap:address location="https://localhost:44320/wsDieta.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsDietaSoap12" binding="tns:wsDietaSoap12">
+      <soap12:address location="https://localhost:44320/wsDieta.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

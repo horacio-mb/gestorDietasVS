@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmCliente.aspx.cs" Inherits="consultarCliente.frmCliente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmCliente.aspx.cs" Inherits="consultarDieta.frmCliente" %>
 
 <!DOCTYPE html>
 
@@ -8,6 +8,11 @@
     <title></title>
 </head>
 <body>
+    <a href="#">Comida</a>&nbsp;
+        <a href="#">Tipo Comida</a>&nbsp;
+        <a href="frmCliente.aspx">Cliente</a>&nbsp;
+        <a href="#">Usuario</a>&nbsp;
+        <a href="frmConsultarDieta.aspx">Dieta</a>&nbsp;
     <form id="form1" runat="server">
         <h3>CONSULTAS</h3>
         <div>

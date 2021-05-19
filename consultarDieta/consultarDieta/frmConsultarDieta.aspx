@@ -27,7 +27,7 @@
     <center>
         <a href="#">Comida</a>&nbsp;
         <a href="#">Tipo Comida</a>&nbsp;
-        <a href="#">Cliente</a>&nbsp;
+        <a href="frmCliente.aspx">Cliente</a>&nbsp;
         <a href="#">Usuario</a>&nbsp;
         <a href="frmDieta.aspx">Dieta</a>&nbsp;
         <h3>REGISTRO DE DIETAS</h3>

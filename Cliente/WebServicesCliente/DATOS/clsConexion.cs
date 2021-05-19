@@ -20,8 +20,8 @@ namespace DATOS
         { //constructor
             this.servidor = "localhost";
             this.usuario = "root";
-            this.contrasena = "0163";
-            this.basedatos = "clientedb";
+            this.contrasena = "Passw0rd";
+            this.basedatos = "bdgestordietas";
             this.cmdSP = new MySqlCommand();
         }
 
