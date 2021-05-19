@@ -55,14 +55,7 @@ namespace capaNegocio
         }
 
         //Metodos CRUD
-        public bool guardar()
-        {
-            iniciarSP("guardarVenta");
-            parametroFecha(fecha, "fech");
-            parametroDecimal(monto, "mont");
-            parametroInt(id_cliente, "id_cli");
-            if (ejecutarSP() == true) { return true; } else { return false; }
-        }
+        
 
     }
 

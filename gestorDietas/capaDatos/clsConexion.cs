@@ -2,30 +2,29 @@
 using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace capaDatos
+namespace DATOS
 {
     public class clsConexion
     {
-
         private String servidor;
-        private String usuario;
-        private String password;
         private String basedatos;
-        private MySqlCommand cmd;
+        private String usuario;
+        private String contrasena;
+        private MySqlCommand cmdSP;
 
         public clsConexion()
-        {
+        { //constructor
             this.servidor = "localhost";
             this.usuario = "root";
-            this.password = "Passw0rd";
-            this.basedatos = "gestordietas";
-            this.cmd = new MySqlCommand();
+            this.contrasena = "Passw0rd";
+            this.basedatos = "bdgestordietas";
+            this.cmdSP = new MySqlCommand();
         }
 
         public MySqlConnection conectar()
         {
             MySqlConnection cnx = new MySqlConnection();
-            cnx.ConnectionString = "Server=" + this.servidor + ";Database=" + this.basedatos + "; Uid=" + this.usuario + ";Pwd=" + this.password + ";";
+            cnx.ConnectionString = "Data Source =" + this.servidor + "; User ID=" + this.usuario + "; Password=" + this.contrasena + "; Initial Catalog= " + this.basedatos;
             cnx.Open();
             return cnx;
         }
@@ -36,57 +35,36 @@ namespace capaDatos
             cnx.Close();
         }
 
-        public void iniciarSP(string nombreSP)
+        public void PrepararSP(String sp)
         {
-            this.cmd.Connection = conectar();
-            this.cmd.CommandText = nombreSP;
-            this.cmd.CommandType = CommandType.StoredProcedure;
+            //procedimiento almacenado
+            cmdSP.Connection = conectar();
+            cmdSP.CommandType = CommandType.StoredProcedure;
+            cmdSP.CommandText = sp;
         }
 
-        public bool ejecutarSP()
+        public void AddParametro(String param, String valor)
         {
-            bool res;
-            //this.cmd.Connection = conectar();
-            if (cmd.ExecuteNonQuery() == 1) { res = true; }
-            else { res = false; }
-            this.desconectar();
-            return res;
+            MySqlParameter par = new MySqlParameter();
+            par.ParameterName = param;
+            par.Value = valor;
+            cmdSP.Parameters.Add(par);
         }
 
-        public void parametroInt(int valor, string param)
+        public void ejecutarSP()
         {
-            MySqlParameter Par = new MySqlParameter();
-            Par.ParameterName = param;
-            Par.MySqlDbType = MySqlDbType.Int32;
-            Par.Value = valor;
-            cmd.Parameters.Add(Par);
+            MySqlDataReader spResult;
+            cmdSP.Prepare();
+            spResult = cmdSP.ExecuteReader();
         }
 
-        public void parametroVarchar(string valor, string param, int dimension)
+        public void ejecutarSQL(String s, String nTable, DataSet ds)
         {
-            MySqlParameter Par = new MySqlParameter();
-            Par.ParameterName = param;
-            Par.MySqlDbType = MySqlDbType.VarChar;
-            Par.Size = dimension;
-            Par.Value = valor;
-            cmd.Parameters.Add(Par);
-        }
-        public void parametroFecha(DateTime valor, string param)
-        {
-            MySqlParameter Par = new MySqlParameter();
-            Par.ParameterName = param;
-            Par.MySqlDbType = MySqlDbType.DateTime;
-            Par.Value = valor;
-            cmd.Parameters.Add(Par);
+            MySqlDataAdapter MysqlAdapter;
+            MysqlAdapter = new MySqlDataAdapter(s, conectar());
+            MysqlAdapter.Fill(ds, nTable);
+            desconectar();
         }
 
-        public DataTable mostrarData()
-        {
-            DataTable DtResultado = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(this.cmd);
-            da.Fill(DtResultado);
-            this.desconectar();
-            return DtResultado;
-        }
     }
 }
